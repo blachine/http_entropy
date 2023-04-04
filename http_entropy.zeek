@@ -62,12 +62,14 @@ export {
 
 # Optionally, we can add a new field to the connection record so that
 # the data we are logging (our "Info" record) will be easily
-# accessible in a variety of event handlers.
-redef record connection += {
+# accessible in a variety of event handlers. Note that this redef
+# was commented out Mar 2023 as it caused errors with latest version
+# of zeek
+#redef record connection += {
   # By convention, the name of this new field is the lowercase name
   # of the module.
-  entropy: Info &optional;
-};
+#  entropy: Info &optional;
+#};
 
 # This event is handled at a priority higher than zero so that if
 # users modify this stream in another script, they can do so at the
